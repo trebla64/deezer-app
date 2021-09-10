@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "projects": {
+    "wyzetalk-assessment": {
+      "projectType": "application",
+      "root": "apps/wyzetalk-assessment",
+      "sourceRoot": "apps/wyzetalk-assessment/src",
+      "prefix": "wyzetalk",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/wyzetalk-assessment",
+            "index": "apps/wyzetalk-assessment/src/index.html",
+            "main": "apps/wyzetalk-assessment/src/main.ts",
+            "polyfills": "apps/wyzetalk-assessment/src/polyfills.ts",
+            "tsConfig": "apps/wyzetalk-assessment/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/wyzetalk-assessment/src/favicon.ico",
+              "apps/wyzetalk-assessment/src/assets"
+            ],
+            "styles": ["apps/wyzetalk-assessment/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/wyzetalk-assessment/src/environments/environment.ts",
+                  "with": "apps/wyzetalk-assessment/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "wyzetalk-assessment:build:production"
+            },
+            "development": {
+              "browserTarget": "wyzetalk-assessment:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "wyzetalk-assessment:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/wyzetalk-assessment/src/**/*.ts",
+              "apps/wyzetalk-assessment/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/wyzetalk-assessment"],
+          "options": {
+            "jestConfig": "apps/wyzetalk-assessment/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "wyzetalk-assessment-e2e": {
+      "root": "apps/wyzetalk-assessment-e2e",
+      "sourceRoot": "apps/wyzetalk-assessment-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/wyzetalk-assessment-e2e/cypress.json",
+            "devServerTarget": "wyzetalk-assessment:serve:development",
+            "tsConfig": "apps/wyzetalk-assessment-e2e/tsconfig.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "wyzetalk-assessment:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/wyzetalk-assessment-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular",
+    "packageManager": "npm"
+  },
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "wyzetalk-assessment"
+}
