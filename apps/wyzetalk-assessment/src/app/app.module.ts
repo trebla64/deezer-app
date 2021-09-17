@@ -10,6 +10,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
   { path: '', redirectTo: '/artists', pathMatch: 'full' },
@@ -25,6 +28,8 @@ const routes: Routes = [
     MatToolbarModule,
     MatInputModule,
     MatIconModule,
+    MatSidenavModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

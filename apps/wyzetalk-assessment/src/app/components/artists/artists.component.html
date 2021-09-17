@@ -1,6 +1,32 @@
-<mat-toolbar>
-  <mat-form-field class="search-box" appearance="fill">
-    <mat-icon>search</mat-icon>
-    <input matInput type="search">
-  </mat-form-field>
-</mat-toolbar>
+<div>
+  <mat-toolbar color="primary">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <a mat-button class="companyName" routerLink="/">
+      <span>Site name</span>
+    </a>
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true">
+      <a mat-button routerLink="/home">Home</a>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+    <mat-sidenav
+      color="primary"
+      #sidenav
+      fxLayout="column"
+      mode="over"
+      opened="false"
+      fxHide.gt-sm="true"
+    >
+      <div fxLayout="column">
+        <a mat-button routerLink="/home">Home</a>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill> Awesome content </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
