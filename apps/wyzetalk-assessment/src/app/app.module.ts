@@ -8,15 +8,24 @@ import { ArtistsComponent } from './components/artists/artists.component';
 import { RouterModule, Routes } from '@angular/router';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   { path: '', redirectTo: '/artists', pathMatch: 'full' },
-  { path: 'artists', component: ArtistsComponent }
+  { path: 'artists', component: ArtistsComponent },
 ];
 
 @NgModule({
   declarations: [AppComponent, ArtistsComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(routes), MatToolbarModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(routes),
+    MatToolbarModule,
+    MatInputModule,
+    MatIconModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
