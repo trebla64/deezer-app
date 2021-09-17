@@ -1,14 +1,12 @@
 <div>
-  <mat-toolbar color="primary">
+  <mat-toolbar class="example-toolbar">
     <div fxShow="true" fxHide.gt-sm="true">
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
     </div>
 
-    <a mat-button class="companyName" routerLink="/">
-      <span>Site name</span>
-    </a>
+    <span>Site name</span>
     <span class="example-spacer"></span>
     <div fxShow="true" fxHide.lt-md="true">
       <a mat-button routerLink="/home">Home</a>
@@ -27,6 +25,8 @@
         <a mat-button routerLink="/home">Home</a>
       </div>
     </mat-sidenav>
-    <mat-sidenav-content fxFlexFill> Awesome content </mat-sidenav-content>
+    <mat-sidenav-content class="example-content" fxFlexFill>
+      Awesome content
+    </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
