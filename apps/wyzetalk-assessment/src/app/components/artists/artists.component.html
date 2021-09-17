@@ -26,7 +26,34 @@
       </div>
     </mat-sidenav>
     <mat-sidenav-content class="example-content" fxFlexFill>
-      Awesome content
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4" *ngFor="let artist of artists">
+            <mat-card>
+              <img
+                mat-card-image
+                src="../../../assets/250x250-000000-80-0-0.jpg"
+              />
+              <mat-card-title>{{ artist.name }}</mat-card-title>
+              <mat-card-content>Test</mat-card-content>
+            </mat-card>
+            <!-- <mdb-card-img [src]="card.img" alt="Card image cap">
+              </mdb-card-img>
+              <mdb-card-body>
+                <mdb-card-title>
+                  <h4>{{ card.title }}</h4>
+                </mdb-card-title>
+
+                <mdb-card-text>
+                  {{ card.description }}
+                </mdb-card-text>
+
+                <button mdbBtn color="primary">{{ card.buttonText }}</button>
+              </mdb-card-body>
+            </mdb-card> -->
+          </div>
+        </div>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

@@ -11,6 +11,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -30,6 +31,7 @@ const routes: Routes = [
     MatIconModule,
     MatSidenavModule,
     FlexLayoutModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
