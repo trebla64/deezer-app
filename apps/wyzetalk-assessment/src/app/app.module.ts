@@ -7,6 +7,8 @@ import { ArtistsComponent } from './components/artists/artists.component';
 
 import { RouterModule, Routes } from '@angular/router';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 const routes: Routes = [
   { path: '', redirectTo: '/artists', pathMatch: 'full' },
   { path: 'artists', component: ArtistsComponent }
@@ -14,7 +16,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, ArtistsComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(routes), MatToolbarModule],
   providers: [],
   bootstrap: [AppComponent],
 })
