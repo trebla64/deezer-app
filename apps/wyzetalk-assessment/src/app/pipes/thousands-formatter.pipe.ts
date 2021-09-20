@@ -1,12 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'thousandsFormatter'
+  name: 'thousandsFormatter',
 })
 export class ThousandsFormatterPipe implements PipeTransform {
+  transform(value: number, ...args: unknown[]): string {
+    const result = value / 1000.0;
+    const strResult = result.toFixed(2) + 'k';
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+    return strResult;
   }
-
 }

@@ -35,7 +35,7 @@
                 [src]="artist.img"
               />
               <mat-card-title>{{ artist.name }}</mat-card-title>
-              <mat-card-content>Test</mat-card-content>
+              <mat-card-content>Fans: {{ artist.fans | thousandsFormatter }}</mat-card-content>
             </mat-card>
           </div>
         </div>
