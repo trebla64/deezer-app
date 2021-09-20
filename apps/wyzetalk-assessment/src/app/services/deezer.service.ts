@@ -18,11 +18,5 @@ export class DeezerService {
 
   getArtists(artist: string): Promise<Artist[]> {
     return this.http.get<Artist[]>(`${API_URL}artists?q=${artist}`).toPromise();
-    // return [
-    //   { name: 'Linked Horizon', fans: 9830 },
-    //   { name: "Link'ed", fans: 30 },
-    //   { name: 'Linked Up 4Ever / D.R.W.P.', fans: 0 },
-    //   { name: 'Linked Sound', fans: 0 },
-    // ];
   }
 }
