@@ -22,7 +22,7 @@ app.get('/artists', async (req, res) => {
   );
   const body = await response.json();
 
-  let result = [];
+  const result = [];
   for (let i = 0; i < body.data.length; i++) {
     const data = body.data[i];
     result.push({
