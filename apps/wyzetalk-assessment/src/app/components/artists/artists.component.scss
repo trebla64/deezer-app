@@ -42,14 +42,22 @@ button {
 .example-toolbar {
   color: white;
   background-color: #4153af;
+  height: 116px;
 }
 
 .card-padding {
-  padding: 25px;
+  padding-top: 0px;
+  padding-bottom: 25px;
 }
 
 .card-content {
   color: white;
   background-color: #424242;
   text-align: left;
+}
+
+.example-content {
+  padding-top: 125px;
+  padding-left: 22%;
+  padding-right: 22%;
 }
