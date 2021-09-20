@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-// TODO: Move to service
-interface Artist {
-  name: string;
-  fans: number;
-}
+import { DeezerService, Artist } from '../../services/deezer.service';
 
 @Component({
   selector: 'wyzetalk-artists',
@@ -12,21 +7,16 @@ interface Artist {
   styleUrls: ['./artists.component.scss'],
 })
 export class ArtistsComponent implements OnInit {
-  private value: string;
+  public searchValue = '';
+  public artists: Artist[] = [];
 
-  // TODO: Move to service
-  artists: Artist[] = [
-    { name: 'Linked Horizon', fans: 9830 },
-    { name: "Link'ed", fans: 30 },
-    { name: 'Linked Up 4Ever / D.R.W.P.', fans: 0 },
-    { name: 'Linked Sound', fans: 0 },
-  ];
-
-  constructor() {
-    this.value = '';
-  }
+  constructor(private deezerService: DeezerService) {}
 
   ngOnInit() {
     console.log('Entered artists screen');
+  }
+
+  onEnter() {
+    console.log('Entered search term: ', this.searchValue);
   }
 }

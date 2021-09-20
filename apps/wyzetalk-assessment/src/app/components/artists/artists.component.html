@@ -6,7 +6,7 @@
       </button>
     </div>
 
-    <span><input type="text"></span>
+    <span><input type="text" (keyup.enter)="onEnter()" [(ngModel)]="searchValue" ></span>
     <span class="example-spacer"></span>
     <div fxShow="true" fxHide.lt-md="true">
       <a mat-button routerLink="/home">Home</a>

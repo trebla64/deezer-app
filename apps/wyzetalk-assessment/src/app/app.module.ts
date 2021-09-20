@@ -15,6 +15,8 @@ import { MatCardModule } from '@angular/material/card';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { FormsModule } from '@angular/forms';
+
 const routes: Routes = [
   { path: '', redirectTo: '/artists', pathMatch: 'full' },
   { path: 'artists', component: ArtistsComponent },
@@ -32,6 +34,7 @@ const routes: Routes = [
     MatSidenavModule,
     FlexLayoutModule,
     MatCardModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
