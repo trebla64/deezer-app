@@ -20,6 +20,7 @@ export class ArtistsComponent implements OnInit {
     console.log('Entered search term: ', this.searchValue);
     try {
       this.artists = await this.deezerService.getArtists(this.searchValue);
+      console.log(this.artists);
     } catch (error) {
       console.log('Error: ', error);
     }

@@ -5,8 +5,11 @@
 
 import * as express from 'express';
 import fetch from 'node-fetch';
+import * as cors from 'cors';
 
 const app = express();
+
+app.use(cors());
 
 app.get('/healthcheck', (req, res) => {
   res.status(200).json({ status: 'API online' });

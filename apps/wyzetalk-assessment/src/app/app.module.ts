@@ -17,6 +17,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { FormsModule } from '@angular/forms';
 
+import { HttpClientModule } from '@angular/common/http';
+
 const routes: Routes = [
   { path: '', redirectTo: '/artists', pathMatch: 'full' },
   { path: 'artists', component: ArtistsComponent },
@@ -35,6 +37,7 @@ const routes: Routes = [
     FlexLayoutModule,
     MatCardModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
