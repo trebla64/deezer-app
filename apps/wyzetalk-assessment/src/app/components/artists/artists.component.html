@@ -29,7 +29,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-4 card-padding" *ngFor="let artist of artists">
-            <mat-card class="card-content">
+            <mat-card class="card-content" (click)="onClickCard(artist.id)">
               <img
                 mat-card-image
                 [src]="artist.img"

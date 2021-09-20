@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DeezerService, Artist } from '../../services/deezer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'wyzetalk-artists',
@@ -10,7 +11,7 @@ export class ArtistsComponent implements OnInit {
   public searchValue = '';
   public artists: Artist[] = [];
 
-  constructor(private deezerService: DeezerService) {}
+  constructor(private deezerService: DeezerService, private router: Router) {}
 
   ngOnInit() {
     console.log('Entered artists screen');
@@ -24,5 +25,10 @@ export class ArtistsComponent implements OnInit {
     } catch (error) {
       console.log('Error: ', error);
     }
+  }
+
+  onClickCard(id: number) {
+    console.log('clicked card with id: ', id);
+    this.router.navigate(['/artist', { id: id }]);
   }
 }
