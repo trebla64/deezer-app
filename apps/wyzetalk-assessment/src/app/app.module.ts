@@ -18,6 +18,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ThousandsFormatterPipe } from './pipes/thousands-formatter.pipe';
 
 const routes: Routes = [
   { path: '', redirectTo: '/artists', pathMatch: 'full' },
@@ -25,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ArtistsComponent],
+  declarations: [AppComponent, ArtistsComponent, ThousandsFormatterPipe],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
