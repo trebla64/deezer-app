@@ -16,7 +16,12 @@ export class ArtistsComponent implements OnInit {
     console.log('Entered artists screen');
   }
 
-  onEnter() {
+  async onEnter() {
     console.log('Entered search term: ', this.searchValue);
+    try {
+      this.artists = await this.deezerService.getArtists(this.searchValue);
+    } catch (error) {
+      console.log('Error: ', error);
+    }
   }
 }
