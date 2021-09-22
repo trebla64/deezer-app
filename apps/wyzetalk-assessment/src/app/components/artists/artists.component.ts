@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DeezerService, Artist } from '../../services/deezer.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'wyzetalk-artists',
@@ -8,23 +8,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./artists.component.scss'],
 })
 export class ArtistsComponent implements OnInit {
-  public searchValue = '';
   public artists: Artist[] = [];
+  private search = '';
+  private sub: any;
 
-  constructor(private deezerService: DeezerService, private router: Router) {}
+  constructor(
+    private deezerService: DeezerService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     console.log('Entered artists screen');
+    this.sub = this.route.params.subscribe((params) => {
+      this.loadArtists(params['search']);
+    });
   }
 
-  async onEnter() {
-    console.log('Entered search term: ', this.searchValue);
-    try {
-      this.artists = await this.deezerService.getArtists(this.searchValue);
-      console.log(this.artists);
-    } catch (error) {
-      console.log('Error: ', error);
-    }
+  async loadArtists(search: string) {
+    console.log('loadArtists:');
+    this.artists = await this.deezerService.getArtists(search);
+    console.log(this.artists);
   }
 
   onClickCard(id: number) {

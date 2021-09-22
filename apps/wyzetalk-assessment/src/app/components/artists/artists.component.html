@@ -1,45 +1,13 @@
-<div>
-  <mat-toolbar class="example-toolbar mat-elevation-z5">
-    <div fxShow="true" fxHide.gt-sm="true">
-      <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 card-padding" *ngFor="let artist of artists">
+      <mat-card class="card-content" (click)="onClickCard(artist.id)">
+        <img mat-card-image [src]="artist.img" />
+        <mat-card-title>{{ artist.name }}</mat-card-title>
+        <mat-card-content
+          >Fans: {{ artist.fans | thousandsFormatter }}</mat-card-content
+        >
+      </mat-card>
     </div>
-
-    <span><input type="text" (keyup.enter)="onEnter()" [(ngModel)]="searchValue" ></span>
-    <span class="example-spacer"></span>
-    <div fxShow="true" fxHide.lt-md="true">
-      <a mat-button routerLink="/home">Home</a>
-    </div>
-  </mat-toolbar>
-  <mat-sidenav-container fxFlexFill class="example-container">
-    <mat-sidenav
-      color="primary"
-      #sidenav
-      fxLayout="column"
-      mode="over"
-      opened="false"
-      fxHide.gt-sm="true"
-    >
-      <div fxLayout="column">
-        <a mat-button routerLink="/home">Home</a>
-      </div>
-    </mat-sidenav>
-    <mat-sidenav-content class="example-content" fxFlexFill>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4 card-padding" *ngFor="let artist of artists">
-            <mat-card class="card-content" (click)="onClickCard(artist.id)">
-              <img
-                mat-card-image
-                [src]="artist.img"
-              />
-              <mat-card-title>{{ artist.name }}</mat-card-title>
-              <mat-card-content>Fans: {{ artist.fans | thousandsFormatter }}</mat-card-content>
-            </mat-card>
-          </div>
-        </div>
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+  </div>
 </div>
