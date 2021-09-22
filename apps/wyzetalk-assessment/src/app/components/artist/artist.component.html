@@ -1,1 +1,13 @@
-<p>artist works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 card-padding" *ngFor="let album of albums">
+      <mat-card class="card-content">
+        <img mat-card-image [src]="album.img" />
+        <mat-card-title>{{ album.name }}</mat-card-title>
+        <mat-card-content
+          >Fans: {{ album.fans | thousandsFormatter }}</mat-card-content
+        >
+      </mat-card>
+    </div>
+  </div>
+</div>
