@@ -1,14 +1,45 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-3 card-padding" *ngFor="let album of albums">
-      <mat-card class="card-content">
-        <img mat-card-image [src]="album.img" />
-        <mat-card-title>{{ album.name }}</mat-card-title>
-        <mat-card-content
-          >Fans: {{ album.fans | thousandsFormatter }}<br />
-          Released: {{ album.release_date }}</mat-card-content
-        >
-      </mat-card>
+<div>
+  <mat-toolbar class="example-toolbar mat-elevation-z5">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
     </div>
-  </div>
+
+    <span><input type="text" /></span>
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true">
+      <a mat-button routerLink="/home">Home</a>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+    <mat-sidenav
+      color="primary"
+      #sidenav
+      fxLayout="column"
+      mode="over"
+      opened="false"
+      fxHide.gt-sm="true"
+    >
+      <div fxLayout="column">
+        <a mat-button routerLink="/home">Home</a>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content class="example-content" fxFlexFill>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 card-padding" *ngFor="let album of albums">
+            <mat-card class="card-content">
+              <img mat-card-image [src]="album.img" />
+              <mat-card-title>{{ album.name }}</mat-card-title>
+              <mat-card-content
+                >Fans: {{ album.fans | thousandsFormatter }}<br />
+                Released: {{ album.release_date }}</mat-card-content
+              >
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
