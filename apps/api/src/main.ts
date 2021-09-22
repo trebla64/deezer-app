@@ -16,7 +16,6 @@ app.get('/healthcheck', (req, res) => {
 });
 
 app.get('/artists', async (req, res) => {
-  console.log(req.query.q);
   const response = await fetch(
     `https://api.deezer.com/search/artist/?q=${req.query.q}`
   );
