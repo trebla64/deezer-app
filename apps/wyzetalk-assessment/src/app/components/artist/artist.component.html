@@ -1,7 +1,22 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-8"><mat-card></mat-card></div>
-    <div class="col-sm-2">Bar</div>
+    <div class="col-sm-8">
+      <mat-card class="home-card">
+        <mat-card-content class="home-card-content">
+          <img
+            mat-card-image
+            src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+            alt="Photo of a Shiba Inu"
+          />
+          <div>
+            <div>Second</div>
+            <div>Third</div>
+            <div>Fourth</div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-sm-2 white-text"><span>Top tracks:</span></div>
     <div class="col-sm-3 card-padding" *ngFor="let album of albums">
       <mat-card class="card-content">
         <img mat-card-image [src]="album.img" />
