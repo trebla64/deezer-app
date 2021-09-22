@@ -28,6 +28,8 @@
     <mat-sidenav-content class="example-content" fxFlexFill>
       <div class="container">
         <div class="row">
+          <div class="col-sm-8"><mat-card></mat-card></div>
+          <div class="col-sm-2">Bar</div>
           <div class="col-sm-3 card-padding" *ngFor="let album of albums">
             <mat-card class="card-content">
               <img mat-card-image [src]="album.img" />
