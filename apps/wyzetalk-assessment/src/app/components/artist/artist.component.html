@@ -5,7 +5,8 @@
         <img mat-card-image [src]="album.img" />
         <mat-card-title>{{ album.name }}</mat-card-title>
         <mat-card-content
-          >Fans: {{ album.fans | thousandsFormatter }}</mat-card-content
+          >Fans: {{ album.fans | thousandsFormatter }}<br />
+          Released: {{ album.release_date }}</mat-card-content
         >
       </mat-card>
     </div>
