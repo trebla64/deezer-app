@@ -22,7 +22,7 @@
         <tr *ngFor="let track of top5Tracks; let i = index">
           <td>{{ i + 1 }}</td>
           <td>{{ track.name }}</td>
-          <td>{{ track.duration }}</td>
+          <td>{{ track.duration * 1000 | date:'mm:ss' }}</td>
         </tr>
       </table>
     </div>
