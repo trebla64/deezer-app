@@ -18,6 +18,12 @@ export interface Album {
   release_date: string;
 }
 
+export interface Track {
+  id: number;
+  name: string;
+  duration: number;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -33,6 +39,12 @@ export class DeezerService {
   getAlbums(artist_id: number): Promise<Album[]> {
     return this.http
       .get<Album[]>(`${API_URL}/artist/${artist_id}/albums`)
+      .toPromise();
+  }
+
+  getTop5(artist_id: number): Promise<Track[]> {
+    return this.http
+      .get<Track[]>(`${API_URL}/artist/${artist_id}/top5`)
       .toPromise();
   }
 }

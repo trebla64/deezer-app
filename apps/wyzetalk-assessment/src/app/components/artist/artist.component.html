@@ -16,7 +16,18 @@
         </mat-card-content>
       </mat-card>
     </div>
-    <div class="col-sm-2 white-text"><span>Top tracks:</span></div>
+    <div class="col-sm-4 white-text">
+      <p>Top tracks:</p>
+      <table>
+        <tr *ngFor="let track of top5Tracks; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ track.name }}</td>
+          <td>{{ track.duration }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-sm-3 card-padding" *ngFor="let album of albums">
       <mat-card class="card-content">
         <img mat-card-image [src]="album.img" />

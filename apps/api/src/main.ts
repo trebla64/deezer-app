@@ -72,6 +72,29 @@ app.get('/artist/:artist_id/albums', async (req, res) => {
   res.status(200).json(result);
 });
 
+/**
+ * Returns top 5 tracks for the given artist
+ */
+app.get('/artist/:artist_id/top5', async (req, res) => {
+  // TODO: Fix limit to something sensible and use next pointer and total attributes returned in JSON
+  const response = await fetch(
+    `https://api.deezer.com/artist/${req.params.artist_id}/top?limit=5`
+  );
+  const body = await response.json();
+
+  const result = [];
+  for (let i = 0; i < body.data.length; i++) {
+    const data = body.data[i];
+    result.push({
+      id: data.id,
+      name: data.title,
+      duration: data.duration,
+    });
+  }
+
+  res.status(200).json(result);
+});
+
 const port = process.env.port || 3333;
 const server = app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`);

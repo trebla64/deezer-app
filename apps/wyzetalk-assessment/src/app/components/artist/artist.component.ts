@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Album, DeezerService } from '../../services/deezer.service';
+import { Album, Track, DeezerService } from '../../services/deezer.service';
 
 @Component({
   selector: 'wyzetalk-artist',
@@ -10,6 +10,7 @@ import { Album, DeezerService } from '../../services/deezer.service';
 export class ArtistComponent implements OnInit {
   private selectedId: number;
   public albums: Album[] = [];
+  public top5Tracks: Track[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -23,6 +24,7 @@ export class ArtistComponent implements OnInit {
       this.selectedId = Number(params.get('id'));
       console.log('selectedId: ', this.selectedId);
       this.refreshAlbums();
+      this.refreshTop5();
     });
   }
 
@@ -30,6 +32,15 @@ export class ArtistComponent implements OnInit {
     try {
       this.albums = await this.deezerService.getAlbums(this.selectedId);
       console.log('albums: ', this.albums);
+    } catch (error) {
+      console.log('Error: ', error);
+    }
+  }
+
+  async refreshTop5() {
+    try {
+      this.top5Tracks = await this.deezerService.getTop5(this.selectedId);
+      console.log('tracks: ', this.top5Tracks);
     } catch (error) {
       console.log('Error: ', error);
     }
