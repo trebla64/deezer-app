@@ -32,6 +32,18 @@ export class ArtistComponent implements OnInit {
     try {
       this.albums = await this.deezerService.getAlbums(this.selectedId);
       console.log('albums: ', this.albums);
+      // Sort albums by release date (newest first)
+      this.albums = this.albums.sort((n1, n2) => {
+        if (n1.release_date < n2.release_date) {
+          return 1;
+        }
+
+        if (n1.release_date > n2.release_date) {
+          return -1;
+        }
+
+        return 0;
+      });
     } catch (error) {
       console.log('Error: ', error);
     }
