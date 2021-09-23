@@ -3,11 +3,7 @@
     <div class="col-sm-8">
       <mat-card class="home-card">
         <mat-card-content class="home-card-content">
-          <img
-            mat-card-image
-            src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-            alt="Photo of a Shiba Inu"
-          />
+          <img mat-card-image [src]="artistImg" />
           <div>
             <div>Second</div>
             <div>Third</div>
@@ -22,7 +18,7 @@
         <tr *ngFor="let track of top5Tracks; let i = index">
           <td>{{ i + 1 }}</td>
           <td>{{ track.name }}</td>
-          <td>{{ track.duration * 1000 | date:'mm:ss' }}</td>
+          <td>{{ track.duration * 1000 | date: 'mm:ss' }}</td>
         </tr>
       </table>
     </div>

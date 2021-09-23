@@ -9,6 +9,7 @@ import { Album, Track, DeezerService } from '../../services/deezer.service';
 })
 export class ArtistComponent implements OnInit {
   private selectedId: number;
+  public artistImg = '';
   public albums: Album[] = [];
   public top5Tracks: Track[] = [];
 
@@ -22,7 +23,9 @@ export class ArtistComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.selectedId = Number(params.get('id'));
+      this.artistImg = String(params.get('img'));
       console.log('selectedId: ', this.selectedId);
+      console.log('artistImg: ', this.artistImg);
       this.refreshAlbums();
       this.refreshTop5();
     });

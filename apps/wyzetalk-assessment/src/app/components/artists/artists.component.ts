@@ -35,8 +35,8 @@ export class ArtistsComponent implements OnInit {
     console.log(this.artists);
   }
 
-  onClickCard(id: number) {
-    console.log('clicked card with id: ', id);
-    this.router.navigate(['/artist', { id: id }]);
+  onClickCard(artist: Artist) {
+    console.log('clicked card with id: ', artist.id);
+    this.router.navigate(['/artist', { id: artist.id, img: artist.img }]);
   }
 }
