@@ -14,6 +14,8 @@ export class ArtistComponent implements OnInit {
   public artistName = '';
   public albums: Album[] = [];
   public top5Tracks: Track[] = [];
+  public loadingTracks = false;
+  public loadingAlbums = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -39,7 +41,9 @@ export class ArtistComponent implements OnInit {
 
   async refreshAlbums() {
     try {
+      this.loadingAlbums = true;
       this.albums = await this.deezerService.getAlbums(this.selectedId);
+      this.loadingAlbums = false;
       console.log('albums: ', this.albums);
       // Sort albums by release date (newest first)
       this.albums = this.albums.sort((n1, n2) => {
@@ -54,15 +58,19 @@ export class ArtistComponent implements OnInit {
         return 0;
       });
     } catch (error) {
+      this.loadingAlbums = false;
       console.log('Error: ', error);
     }
   }
 
   async refreshTop5() {
     try {
+      this.loadingTracks = true;
       this.top5Tracks = await this.deezerService.getTop5(this.selectedId);
+      this.loadingTracks = false;
       console.log('tracks: ', this.top5Tracks);
     } catch (error) {
+      this.loadingTracks = false;
       console.log('Error: ', error);
     }
   }
