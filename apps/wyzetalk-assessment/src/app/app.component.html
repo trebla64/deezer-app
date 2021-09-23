@@ -6,9 +6,14 @@
       </button>
     </div>
 
-    <span
-      ><input type="text" (keyup.enter)="onEnter()" [(ngModel)]="searchValue"
-    /></span>
+    <input
+      matInput
+      class="search-box"
+      type="text"
+      (keyup.enter)="onEnter()"
+      [(ngModel)]="searchValue"
+      placeholder="Search..."
+    />
     <span class="example-spacer"></span>
   </mat-toolbar>
   <mat-sidenav-container class="example-container">
