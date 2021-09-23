@@ -1,6 +1,6 @@
 # Wyzetalk assessment
 
-This is my attempt at the Wyzetalk assessment as described [https://github.com/Wyzetalk/full-stack-assessment](here). The project uses Nx to
+This is my attempt at the Wyzetalk assessment as described [here](https://github.com/Wyzetalk/full-stack-assessment). The project uses Nx to
 allow for multiple apps in the same workspace. It includes an Angular 12 app and an API layer written using Express.
 
 ## Requirements
