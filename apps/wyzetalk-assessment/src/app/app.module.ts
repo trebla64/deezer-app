@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -48,6 +49,7 @@ const routes: Routes = [
     FormsModule,
     HttpClientModule,
     MatGridListModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
