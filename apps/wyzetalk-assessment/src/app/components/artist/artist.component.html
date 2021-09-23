@@ -5,9 +5,8 @@
         <mat-card-content class="home-card-content">
           <img mat-card-image [src]="artistImg" />
           <div>
-            <div>Second</div>
-            <div>Third</div>
-            <div>Fourth</div>
+            <div>{{ artistName }}</div>
+            <div>Fans: {{ fans | thousandsFormatter }}</div>
           </div>
         </mat-card-content>
       </mat-card>

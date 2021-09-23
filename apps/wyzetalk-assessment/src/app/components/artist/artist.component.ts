@@ -10,6 +10,8 @@ import { Album, Track, DeezerService } from '../../services/deezer.service';
 export class ArtistComponent implements OnInit {
   private selectedId: number;
   public artistImg = '';
+  public fans = 0;
+  public artistName = '';
   public albums: Album[] = [];
   public top5Tracks: Track[] = [];
 
@@ -24,8 +26,12 @@ export class ArtistComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       this.selectedId = Number(params.get('id'));
       this.artistImg = String(params.get('img'));
+      this.fans = Number(params.get('fans'));
+      this.artistName = String(params.get('name'));
       console.log('selectedId: ', this.selectedId);
       console.log('artistImg: ', this.artistImg);
+      console.log('fans: ', this.fans);
+      console.log('Name: ', this.artistName);
       this.refreshAlbums();
       this.refreshTop5();
     });
