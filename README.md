@@ -16,3 +16,9 @@ allow for multiple apps in the same workspace. It includes an Angular 12 app and
 - Run both the express and angular app. The easiest way to do this is running: `yarn nx run-many --target=serve --projects=api,wyzetalk-assessment --parallel=true`
 - Check that the API is online by going to `http://localhost:3333/healthcheck` in a browser
 - Go to `http://localhost:4200/` in a browser to access the angular app
+
+## Other notes
+
+- For some reason I did not require an API key to access the Deezer API, so the back-end doesn't use an API key
+- Some things don't look the same as the examples. The font used differs and some styling couldn't be replicated especially on the card images. So the cards look different
+- The top-left menu button opens a sidebar, but the button in the sidebar isn't linked to a route, so it does nothing but throw an error when clicking on home
