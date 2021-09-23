@@ -24,6 +24,7 @@
     </div>
   </div>
   <div class="row">
+    <p *ngIf="loadingAlbums" class="white-text">Loading albums...</p>
     <div class="col-sm-3 card-padding" *ngFor="let album of albums">
       <mat-card class="card-content">
         <img mat-card-image [src]="album.img" />
