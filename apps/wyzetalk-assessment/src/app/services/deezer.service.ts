@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+// TODO: This should be moved to environment file
 const API_URL = 'http://localhost:3333';
 
 export interface Artist {
