@@ -10,7 +10,8 @@
 
 .white-text {
   color: white;
-  font-size: 15px;
+  font-size: 20px;
+  text-align: left;
 }
 
 html {
@@ -37,6 +38,7 @@ body {
   .home-card-content {
     display: flex;
     justify-content: space-between;
+    background-color: #424242;
 
     & > * {
       display: flex;
@@ -65,6 +67,7 @@ td {
   padding-top: 10px;
   padding-left: 2px;
   padding-right: 10px;
+  font-size: 15px;
 }
 
 table {
