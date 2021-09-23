@@ -21,7 +21,11 @@ export class ArtistsComponent implements OnInit {
   ngOnInit() {
     console.log('Entered artists screen');
     this.sub = this.route.params.subscribe((params) => {
-      this.loadArtists(params['search']);
+      // Don't load artists when search is undefined
+      const searchTerm = params['search'];
+      if (searchTerm) {
+        this.loadArtists(params['search']);
+      }
     });
   }
 
