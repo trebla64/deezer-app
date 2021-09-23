@@ -36,13 +36,14 @@ body {
   }
 
   .home-card-content {
+    color: white;
     display: flex;
     justify-content: space-between;
     background-color: #424242;
 
     & > * {
       display: flex;
-      justify-content: center;
+      // justify-content: center;
       align-items: center;
       flex: auto;
       max-width: 50%;
@@ -85,4 +86,9 @@ table {
 .padding {
   padding-top: 0px;
   padding-bottom: 25px;
+}
+
+.header-size {
+  font-size: 20px;
+  padding-bottom: 10px;
 }
