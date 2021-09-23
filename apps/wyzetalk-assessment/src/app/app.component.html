@@ -1,6 +1,6 @@
 <div>
   <mat-toolbar class="example-toolbar mat-elevation-z5">
-    <div fxShow="true" fxHide.gt-sm="true">
+    <div>
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
@@ -10,24 +10,19 @@
       ><input type="text" (keyup.enter)="onEnter()" [(ngModel)]="searchValue"
     /></span>
     <span class="example-spacer"></span>
-    <div fxShow="true" fxHide.lt-md="true">
-      <a mat-button routerLink="/home">Home</a>
-    </div>
   </mat-toolbar>
-  <mat-sidenav-container fxFlexFill class="example-container">
+  <mat-sidenav-container class="example-container">
     <mat-sidenav
       color="primary"
       #sidenav
-      fxLayout="column"
       mode="over"
       opened="false"
-      fxHide.gt-sm="true"
     >
-      <div fxLayout="column">
+      <div>
         <a mat-button routerLink="/home">Home</a>
       </div>
     </mat-sidenav>
-    <mat-sidenav-content class="example-content" fxFlexFill>
+    <mat-sidenav-content class="example-content">
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
