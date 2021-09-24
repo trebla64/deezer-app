@@ -17,6 +17,10 @@ allow for multiple apps in the same workspace. It includes an Angular 12 app and
 - Check that the API is online by going to `http://localhost:3333/healthcheck` in a browser
 - Go to `http://localhost:4200/` in a browser to access the angular app
 
+## Running the tests
+
+- Run `yarn nx run wyzetalk-assessment:test`
+
 ## Other notes
 
 - For some reason I did not require an API key to access the Deezer API, so the back-end doesn't use an API key
