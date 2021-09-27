@@ -4,8 +4,8 @@ import { Album, Track, DeezerService } from '../../services/deezer.service';
 
 @Component({
   selector: 'wyzetalk-artist',
-  templateUrl: './artist.component.html',
-  styleUrls: ['./artist.component.scss'],
+  templateUrl: './artist-details.component.html',
+  styleUrls: ['./artist-details.component.scss'],
 })
 export class ArtistDetailsComponent implements OnInit {
   private selectedId: number;
