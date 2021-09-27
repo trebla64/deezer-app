@@ -63,7 +63,7 @@ describe('DeezerService', () => {
       },
       {
         id: 2,
-        name: 'Test Artist #2',
+        name: 'Test Album #2',
         img: 'test2.jpg',
         fans: 2000,
         release_date: '2020-09-27',
