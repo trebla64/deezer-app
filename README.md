@@ -35,5 +35,6 @@ button is part of the app component so it is global across other components.
 ## Other notes
 
 - For some reason I did not require an API key to access the Deezer API, so the back-end doesn't use an API key
+- To actually have the app do something you need to specify a search term in the search bar and hit enter
 - Some things don't look the same as the examples. The font used differs and some styling couldn't be replicated especially on the card images. So the cards look different
 - The top-left menu button opens a sidebar, but the button in the sidebar isn't linked to a route, so it does nothing but throw an error when clicking on the "Home" button
