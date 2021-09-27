@@ -21,7 +21,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ThousandsFormatterPipe } from './pipes/thousands-formatter.pipe';
-import { ArtistComponent } from './components/artist/artist.component';
+import { ArtistComponent } from './components/artist-details/artist.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/artists', pathMatch: 'full' },
