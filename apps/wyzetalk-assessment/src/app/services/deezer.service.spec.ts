@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { Album, Artist, DeezerService } from './deezer.service';
+import { Album, Artist, DeezerService, Track } from './deezer.service';
 
 import {
   HttpClientTestingModule,
@@ -82,5 +82,34 @@ describe('DeezerService', () => {
     expect(req.request.method).toEqual('GET');
 
     req.flush(albums);
+  });
+
+  it('#getTop5 should make a `GET` request', () => {
+    // Setup
+    const tracks: Track[] = [
+      {
+        id: 1,
+        name: 'Test Track #1',
+        duration: 100,
+      },
+      {
+        id: 2,
+        name: 'Test Track #2',
+        duration: 200,
+      },
+    ];
+
+    // Actual test
+    const artistId = 13;
+    service.getTop5(artistId).then((resp) => {
+      expect(resp).toEqual(tracks);
+    });
+
+    const req = httpTestingController.expectOne(
+      `${service.API_URL}/artist/${artistId}/top5`
+    );
+    expect(req.request.method).toEqual('GET');
+
+    req.flush(tracks);
   });
 });
