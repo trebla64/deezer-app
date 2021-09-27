@@ -6,6 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -15,6 +16,7 @@ describe('AppComponent', () => {
         MatSidenavModule,
         MatToolbarModule,
         BrowserAnimationsModule,
+        MatIconModule,
       ],
       declarations: [AppComponent],
     }).compileComponents();
