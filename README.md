@@ -31,7 +31,8 @@ The Angular part of the project has three components:
 - Artist details component that has details for a single artist
 
 The app component decides whether to display information for the artists or details for an artist. It uses a `<router-outlet>` element to achieve this. The toolbar that includes the search input and the menu
-button is part of the app component so it is global across other components.
+button is part of the app component so it is global across other components. An Angular service is added to connect the front-end to our express API layer. Also a pipe was added that can format a number of
+given fans to the correctly displayed output.
 
 ## Other notes
 
