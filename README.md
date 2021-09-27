@@ -24,7 +24,7 @@ allow for multiple apps in the same workspace. It includes an Angular 12 app and
 ## Structure of the project
 
 The Angular part of the project has three components: The artists component and the artist details component and the main app component. The app component decides whether
-to display information for the artists or details for an artist. It uses a <router-outlet> element to achieve this. The toolbar that includes the search input and the menu
+to display information for the artists or details for an artist. It uses a `<router-outlet>` element to achieve this. The toolbar that includes the search input and the menu
 button is part of the app component so it is global across other components.
 
 ## Other notes
