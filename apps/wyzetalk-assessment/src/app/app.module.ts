@@ -21,12 +21,12 @@ import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ThousandsFormatterPipe } from './pipes/thousands-formatter.pipe';
-import { ArtistComponent } from './components/artist-details/artist.component';
+import { ArtistDetailsComponent } from './components/artist-details/artist.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/artists', pathMatch: 'full' },
   { path: 'artists', component: ArtistsComponent },
-  { path: 'artist', component: ArtistComponent },
+  { path: 'artist', component: ArtistDetailsComponent },
 ];
 
 @NgModule({
@@ -34,7 +34,7 @@ const routes: Routes = [
     AppComponent,
     ArtistsComponent,
     ThousandsFormatterPipe,
-    ArtistComponent,
+    ArtistDetailsComponent,
   ],
   imports: [
     BrowserModule,

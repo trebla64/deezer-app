@@ -7,7 +7,7 @@ import { Album, Track, DeezerService } from '../../services/deezer.service';
   templateUrl: './artist.component.html',
   styleUrls: ['./artist.component.scss'],
 })
-export class ArtistComponent implements OnInit {
+export class ArtistDetailsComponent implements OnInit {
   private selectedId: number;
   public artistImg = '';
   public fans = 0;
