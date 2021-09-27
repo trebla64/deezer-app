@@ -20,7 +20,6 @@ export class ArtistsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log('Entered artists screen');
     this.sub = this.route.params.subscribe((params) => {
       // Don't load artists when search is undefined
       const searchTerm = params['search'];
@@ -31,20 +30,17 @@ export class ArtistsComponent implements OnInit {
   }
 
   async loadArtists(search: string) {
-    console.log('loadArtists:');
     try {
       this.artists = []; // Must clear artists array for loading indicator to work
       this.loadingArtists = true;
       this.artists = await this.deezerService.getArtists(search);
       this.loadingArtists = false;
-      console.log(this.artists);
     } catch (error) {
       console.log('Error: ', error);
     }
   }
 
   onClickCard(artist: Artist) {
-    console.log('clicked card with id: ', artist.id);
     this.router.navigate([
       '/artist',
       { id: artist.id, img: artist.img, fans: artist.fans, name: artist.name },

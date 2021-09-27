@@ -14,7 +14,6 @@ export class AppComponent {
   constructor(private router: Router) {}
 
   async onEnter() {
-    console.log('Entered search term: ', this.searchValue);
     try {
       this.router.navigate(['/artists', { search: this.searchValue }]);
     } catch (error) {
